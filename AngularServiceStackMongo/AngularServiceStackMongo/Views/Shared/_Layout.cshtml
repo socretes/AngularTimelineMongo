@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html id="ng-app" data-ng-app="myApp">
+<head>
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+
+        // Optionally these for CSS
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+      </script>
+    <![endif]-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/browser-support")
+    @Html.Raw(ViewBag.AppPartials)
+</head>
+<body data-ng-controller="ApplicationController" data-ng-cloak>
+    <header>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-ng-click="isMainMenuCollapsed = !isMainMenuCollapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Build my timeline</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" data-collapse="isMainMenuCollapsed">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/timelines">View</a></li>
+                        <li><a href="#/timelines/new">Create</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <section>
+        @RenderBody()
+    </section>
+    @Scripts.Render("~/bundles/common-scripts")
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+
+            var myAppModule = angular.module('myApp');
+        })();
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

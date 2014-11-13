@@ -1,0 +1,30 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="timelineForm" role="form" class="form-horizontal" novalidate data-ng-submit="submit()">
+            <fieldset>
+                <legend>{{formTitle}}</legend>
+                <div class="form-group" data-ng-show="false">
+                    <label for="inputId" class="col-md-2 control-label">Id</label>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputId" value="{{timeline.id}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': timelineForm.inputName.$invalid}">
+                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputName" placeholder="Enter timeline name here ..." required data-ng-model="timeline.name">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="timelineForm.inputName.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" data-ng-disabled="timelineForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
