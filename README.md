@@ -14,3 +14,10 @@ Some outstanding issues:
 Haven't been able to hook up validation (not sure why this isn't firing)
 
 No tests (shame on me)
+
+Don, Gary: Angular/ServiceStack for Events and timelines
+
+Andy: Logon, search
+
+Reyaz: Publish to twitter
+
