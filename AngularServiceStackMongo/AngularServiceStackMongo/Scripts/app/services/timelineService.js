@@ -23,7 +23,8 @@
                 return timeline.$save();
             },
             deleteTimeline: function (timelineId) {
-                return timelineResource.delete({ timelineId: timelineId });
+            var resourceInstance = new timelineResource();
+            return resourceInstance.$delete({ timelineId: timelineId });
             }
         };
     }]);
