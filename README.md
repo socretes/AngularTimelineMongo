@@ -11,7 +11,7 @@ Any feedback as to how I've used any of Angular, ServiceStack and MongoDB would 
 
 Some outstanding issues:
 
-Haven't been able to hook up validation (not sure why this isn't firing)
+Jon: Haven't been able to hook up validation (not sure why this isn't firing)
 
 No tests (shame on me)
 
