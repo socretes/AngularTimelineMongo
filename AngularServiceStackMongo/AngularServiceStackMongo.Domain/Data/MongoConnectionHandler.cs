@@ -8,6 +8,7 @@
 
         public MongoConnectionHandler()
         {
+            //to be replaced with Andies shared mongo db
             const string connectionString = "";
 
             //// Get a thread-safe client object by using a connection string
@@ -18,7 +19,7 @@
 
             //// Get a reference to the "retrogamesweb" database object
             //// from the Mongo server object
-            const string databaseName = "test_app";
+            const string databaseName = "";
             var db = mongoServer.GetDatabase(databaseName);
 
             //// Get a reference to the collection object from the Mongo database object

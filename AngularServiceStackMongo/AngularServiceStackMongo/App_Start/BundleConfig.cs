@@ -21,6 +21,7 @@ namespace AngularServiceStackMongo.Web
                         "~/scripts/angular-ui/ui-bootstrap.js",
                         "~/scripts/spin.js",
                         "~/scripts/angular-spinner.js",
+                        "~/scripts/toastr.js",
                         "~/scripts/app/app.js",
                 //"~/scripts/app/filters/*.js",
                 //"~/scripts/app/directives/*.js",
