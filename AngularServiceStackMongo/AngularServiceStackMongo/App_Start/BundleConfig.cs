@@ -30,6 +30,7 @@ namespace AngularServiceStackMongo.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/content/bootstrap.css",
+                      "~/content/toastr.css",
                       "~/content/app/app.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
