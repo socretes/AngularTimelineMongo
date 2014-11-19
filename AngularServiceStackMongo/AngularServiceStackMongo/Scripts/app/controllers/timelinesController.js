@@ -12,6 +12,7 @@
                     timelineService.deleteTimeline(timeLineId)
                                                     .then(function () {
                                                         $scope.timelines = timelineService.searchTimelines();
+                                                        toastr.success('Time line Deleted');
                                                     });
                 };
             }
