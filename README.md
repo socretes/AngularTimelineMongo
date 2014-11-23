@@ -11,13 +11,13 @@ Any feedback as to how I've used any of Angular, ServiceStack and MongoDB would 
 
 Some outstanding issues:
 
-Jon: Haven't been able to hook up validation (not sure why this isn't firing)
+Jon: hook up validation, logon (WIP - see AngularTimeLineMongoJD branch)
 
 No tests (shame on me)
 
 Don, Gary: Angular/ServiceStack for Events and timelines
 
-Andy: Logon, search
+Andy: search
 
 Reyaz: Publish to twitter
 
