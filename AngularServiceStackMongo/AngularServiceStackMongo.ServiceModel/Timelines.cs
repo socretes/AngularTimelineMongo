@@ -20,12 +20,22 @@
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
+        public string Text { get; set; }
+        public string Media { get; set; }
+        public string Credit { get; set; }
+        public string Caption { get; set; }
     }
 
     public class CreateTimelineResponse
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public string Type { get; set; }
+        public string Text { get; set; }
+        public string Media { get; set; }
+        public string Credit { get; set; }
+        public string Caption { get; set; }
         public ResponseStatus ResponseStatus { get; set; } //TODO: Determine if this is giving me anything!
     }
 
