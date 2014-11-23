@@ -21,6 +21,7 @@ namespace AngularServiceStackMongo.Web
                         "~/scripts/angular-ui/ui-bootstrap.js",
                         "~/scripts/spin.js",
                         "~/scripts/angular-spinner.js",
+                        "~/scripts/toastr.js",
                         "~/scripts/app/app.js",
                 //"~/scripts/app/filters/*.js",
                 //"~/scripts/app/directives/*.js",
@@ -29,6 +30,7 @@ namespace AngularServiceStackMongo.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/content/bootstrap.css",
+                      "~/content/toastr.css",
                       "~/content/app/app.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,

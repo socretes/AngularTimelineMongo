@@ -10,7 +10,7 @@
     using ServiceStack.FluentValidation;
     using ServiceStack.FluentValidation.Results;
 
-    public class TimelineValidator : AbstractValidator<ServiceModel.Timeline>
+    public class TimelineValidator : AbstractValidator<ServiceModel.CreateTimelineRequest>
     {
         public TimelineValidator(TimelineRepository repository)
         {
@@ -18,7 +18,8 @@
 
             RuleSet(ApplyTo.Post, () =>
             {
-                RuleFor(b => b.Id.Trim()).Equal(string.Empty);
+                //TODO create doesn't pass an ID, revisit later and go for PUT/POST with their own DTO
+                //// RuleFor(b => b.Id).NotNull().NotEqual(string.Empty);
 
                 Custom(b =>
                 {

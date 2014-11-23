@@ -20,14 +20,13 @@
                 return response || $q.when(response);
             },
             'responseError': function (rejection) {
-                var hasErrorMessage = false;
-                var errorMessage;
+
                 // check for generic ServiceStack exception
                 if (rejection.data && rejection.data.responseStatus && rejection.data.responseStatus.message) {
-                    alert("Error: " + rejection.data.responseStatus.message);
+                    toastr.error(rejection.data.responseStatus.message);
                 }
                 else {
-                    alert("Unexpected error. TODO: Should probably handle this better. Maybe look at status code");
+                    toastr.error("Unexpected error : ".concat(rejection.status, " - ", rejection.statusText));
                 }
 
                 usSpinnerService.stop("mainSpinner");

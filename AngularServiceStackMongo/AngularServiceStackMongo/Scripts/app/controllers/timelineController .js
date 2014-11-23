@@ -23,6 +23,7 @@
             $scope.submit = function () {
                 timelineService.updateTimeline($scope.timeline)
                                                 .then(function () {
+                                                    toastr.success('Time line Updated');
                                                     $location.path('/timelines');
                                                 });
             };

@@ -32,14 +32,13 @@
                 HandlerFactoryPath = "api",
             });
 
+            ApplyDebugConfig();
+
+            EnableValidation(container);
+
             ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
 
-            this.Plugins.Add(new ValidationFeature());
-            container.RegisterValidators(typeof(AngularServiceStackMongo.ServiceModel.Type.TimelineValidator).Assembly);
-
             container.RegisterAutoWired<TimelineRepository>().ReusedWithin(ReuseScope.Request);
-
-            //SetConfig(new EndpointHostConfig { DebugMode = false, });
 
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
@@ -47,6 +46,20 @@
 
             //Set MVC to use the same Funq IOC as ServiceStack
             ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
+        }
+
+        private void EnableValidation(Container container)
+        {
+            this.Plugins.Add(new ValidationFeature());
+            container.RegisterValidators(typeof(AngularServiceStackMongo.ServiceModel.Type.TimelineValidator).Assembly);
+        }
+
+        private void ApplyDebugConfig()
+        {
+            #if DEBUG
+                //e.g return stack trace with error responses
+                this.Config.DebugMode = true;
+            #endif
         }
     }
 }
