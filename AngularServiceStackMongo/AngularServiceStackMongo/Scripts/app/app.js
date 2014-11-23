@@ -18,6 +18,7 @@
     myAppModule.config([
         '$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', { templateUrl: 'scripts/app/views/default.html' });
+            $routeProvider.when('/:AuthStatus', { templateUrl: 'scripts/app/views/default.html' }); //// successful redirect from auth, s=1, f=AccessTokenFailed, f=RequestTokenFailed
             $routeProvider.when('/timelines', { templateUrl: 'scripts/app/views/timelinesIndex.html', controller: 'TimelinesController' });
             $routeProvider.when('/timelines/new', { templateUrl: 'scripts/app/views/timelinesEditor.html', controller: 'TimelineController' });
             $routeProvider.when('/timelines/:timelineId/edit', { templateUrl: 'scripts/app/views/timelinesEditor.html', controller: 'TimelineController' });
