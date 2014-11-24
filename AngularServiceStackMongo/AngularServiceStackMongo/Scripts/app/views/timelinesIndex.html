@@ -24,7 +24,7 @@
             </thead>
             <tbody>
                 <tr data-ng-repeat="timeline in timelines">
-                    <td>{{timeline.name}}</td>
+                    <td><a class="btn btn-default" role="button" href="#/timelines/{{timeline.id}}/viewer">{{timeline.name}}</a></td>
                     <td>
                         <a class="btn btn-default" role="button" href="#/timelines/{{timeline.id}}/edit">Edit</a>
                         <button type="button" class="btn btn-default" data-ng-click="delete(timeline.id)">Delete</button>

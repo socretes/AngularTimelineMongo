@@ -212,11 +212,14 @@
     <Content Include="Scripts\app\controllers\applicationController.js" />
     <Content Include="Scripts\app\controllers\timelineController .js" />
     <Content Include="Scripts\app\controllers\timelinesController.js" />
+    <Content Include="Scripts\app\controllers\timelineViewerController.js" />
+    <Content Include="Scripts\app\directives\timelineJSDirective.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
     <Content Include="Scripts\app\views\timelinesEditor.html" />
     <Content Include="Scripts\app\views\timelinesIndex.html" />
     <Content Include="Scripts\app\views\default.html" />
+    <Content Include="Scripts\app\views\timelinesViewer.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
