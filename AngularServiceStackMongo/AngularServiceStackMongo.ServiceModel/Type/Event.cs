@@ -6,12 +6,6 @@ namespace AngularServiceStackMongo.ServiceModel
 
     public class Event : IEvent, IIdentifiable<string>, IUser
     {
-        public string EventId { get; set; }
-
-        public string Name { get; set; }
-
-        public string Id { get; set; }
-
         public string UserName { get; set; }
 
         public string TimelineId { get; set; }
@@ -35,5 +29,7 @@ namespace AngularServiceStackMongo.ServiceModel
         public string Type { get; set; }
 
         public string Tag { get; set; }
+
+        public string Id { get; set; }
     }
 }

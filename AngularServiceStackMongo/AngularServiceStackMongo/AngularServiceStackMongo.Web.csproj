@@ -15,7 +15,7 @@
     <AssemblyName>AngularServiceStackMongo.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -216,6 +216,7 @@
     <Content Include="Scripts\app\directives\timelineJSDirective.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
+    <Content Include="Scripts\app\views\eventsEditor.html" />
     <Content Include="Scripts\app\views\timelinesEditor.html" />
     <Content Include="Scripts\app\views\timelinesIndex.html" />
     <Content Include="Scripts\app\views\default.html" />
@@ -319,7 +320,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49581</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/AngularServiceStackMongo.Web</IISUrl>
+          <IISUrl>http://localhost:49581/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

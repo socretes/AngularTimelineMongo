@@ -22,6 +22,8 @@
             $routeProvider.when('/timelines/new', { templateUrl: 'scripts/app/views/timelinesEditor.html', controller: 'TimelineController' });
             $routeProvider.when('/timelines/:timelineId/edit', { templateUrl: 'scripts/app/views/timelinesEditor.html', controller: 'TimelineController' });
             $routeProvider.when('/timelines/:timelineId/viewer', { templateUrl: 'scripts/app/views/timelinesViewer.html', controller: 'TimelineViewerController' });
+
+            $routeProvider.when('/events/new', { templateUrl: 'scripts/app/views/eventsEditor.html', controller: 'TimelineController' });
         }
     ]);
 
