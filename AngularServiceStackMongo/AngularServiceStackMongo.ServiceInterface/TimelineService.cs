@@ -6,6 +6,7 @@
     using ServiceStack;
     using AngularServiceStackMongo.ServiceModel;
 
+    ////[Authenticate]  TODO disabled for convenience while we build
     public class TimelineService : Service
     {
         private readonly AngularServiceStackMongo.Domain.TimelineRepository repository;
