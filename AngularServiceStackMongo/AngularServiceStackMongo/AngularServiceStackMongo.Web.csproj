@@ -222,9 +222,10 @@
     <Content Include="Scripts\app\controllers\timelinesController.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
+    <Content Include="Scripts\app\views\logon.html" />
     <Content Include="Scripts\app\views\timelinesEditor.html" />
     <Content Include="Scripts\app\views\timelinesIndex.html" />
-    <Content Include="Scripts\app\views\default.html" />
+    <Content Include="Scripts\app\views\home.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -278,9 +279,9 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.orig.cshtml" />
   </ItemGroup>
   <ItemGroup>
