@@ -15,13 +15,14 @@
 
                 $scope.events = eventService.searchEvents($routeParams.timelineId);
 
-                //$scope.delete = function (eventId) {
-                //    eventService.deleteEvent(eventId)
-                //                                    .then(function () {
-                //                                        $scope.events = eventService.searchEvents();
-                //                                        toastr.success('Time line Deleted');
-                //                                    });
-                //};
+                $scope.delete = function (id) {
+                    console.log('the event id is' + id);
+                    eventService.deleteEvent(id)
+                                                    .then(function () {
+                                                        $scope.events = eventService.searchEvents($routeParams.timelineId);
+                                                        toastr.success('Event Deleted');
+                                                    });
+                };
             }
     ]);
 })();
