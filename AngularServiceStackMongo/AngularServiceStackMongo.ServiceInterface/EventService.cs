@@ -8,32 +8,39 @@
 
     public class EventService : Service
     {
-        private readonly AngularServiceStackMongo.Domain.EventRepository respository;
+        private readonly AngularServiceStackMongo.Domain.EventRepository repository;
 
-        public EventService()
+        public EventService(AngularServiceStackMongo.Domain.EventRepository repositor)
         {
-            respository = new AngularServiceStackMongo.Domain.EventRepository();
+            this.repository = new AngularServiceStackMongo.Domain.EventRepository();
+        }
+
+        public List<Event> Get(FindEvents request)
+        {            
+            var timelines = repository.GetByTimelineId(request.TimelineId, 100, 0).ToList();
+            var dto = timelines.ConvertAll(x => x.ConvertTo<Event>());
+            return dto;
         }
 
         public Event Get(GetEvent request)
         {
-            var entity = respository.Get(request.Id);
+            var entity = repository.Get(request.Id);
             var dto = entity.ConvertTo<Event>();
 
             return dto;
         }
 
-        public CreateEventResponse Post(CreateEvent request)
+        public CreateEventResponse Post(CreateEventRequest request)
         {
             var entity = request.ConvertTo<Domain.Event>();
-            var requestId = respository.SaveUpdate(entity);
+            repository.SaveUpdate(entity);
 
-            return new CreateEventResponse() { Id = requestId };
+            return entity.ConvertTo<CreateEventResponse>();
         }
 
         public DeleteEventResponse Delete(DeleteEvent request)
         {
-            respository.Delete(request.Id);
+            repository.Delete(request.Id);
 
             return new DeleteEventResponse() { Id = request.Id };
         }

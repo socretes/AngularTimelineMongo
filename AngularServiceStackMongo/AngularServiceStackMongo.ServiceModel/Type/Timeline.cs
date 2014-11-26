@@ -19,5 +19,7 @@
         public string Credit { get; set; }
 
         public string Caption { get; set; }
+
+        public string StartDate { get; set; }
     }
 }

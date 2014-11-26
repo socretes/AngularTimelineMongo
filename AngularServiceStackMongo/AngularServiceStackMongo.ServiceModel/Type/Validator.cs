@@ -15,21 +15,10 @@
         public TimelineValidator(TimelineRepository repository)
         {
             RuleFor(b => b.Name).NotEmpty();
+            RuleFor(b => b.Name).NotNull();
 
             RuleSet(ApplyTo.Post, () =>
             {
-                //TODO create doesn't pass an ID, revisit later and go for PUT/POST with their own DTO
-                //// RuleFor(b => b.Id).NotNull().NotEqual(string.Empty);
-
-                Custom(b =>
-                {
-                    if (repository.GetByName(b.Name).Any())
-                    {
-                        return new ValidationFailure("Name", "A timeline with the same name already exists", "Duplicate", b.Name);
-                    }
-                    return null;
-                });
-
                 Custom(b =>
                 {
                     if (repository.GetByName(b.Name).Count() >= 10) //TODO: Remove once server side paging is implemented
@@ -42,11 +31,36 @@
         }
     }
 
-    public class BlankValidator : AbstractValidator<ServiceModel.Timeline>
+    public class EventValidator : AbstractValidator<ServiceModel.CreateEventRequest>
     {
-        public BlankValidator()
+        public EventValidator(EventRepository eventRepository, TimelineRepository timelineRepository)
         {
+            RuleFor(b => b.TimelineId).NotEmpty();
+            RuleFor(b => b.TimelineId).NotNull();
 
+            RuleFor(b => b.Headline).NotEmpty();
+            RuleFor(b => b.Headline).NotNull();
+
+            RuleSet(ApplyTo.Post, () =>
+            {
+                Custom(b =>
+                {
+                    if (eventRepository.GetByHeadline(b.Headline, 1, 0).Any())
+                    {
+                        return new ValidationFailure("Headline", "An event with the same name already exists", "Duplicate", b.Headline);
+                    }
+                    return null;
+                });
+
+                Custom(b =>
+                {
+                    if (timelineRepository.Get(b.TimelineId) == null)
+                    {
+                        return new ValidationFailure("TimelineId", "Timeline does not exist", "DoesNotExist", b.TimelineId);
+                    }
+                    return null;
+                });
+            });
         }
     }
 }

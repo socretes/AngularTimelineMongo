@@ -40,6 +40,8 @@
 
             container.RegisterAutoWired<TimelineRepository>().ReusedWithin(ReuseScope.Request);
 
+            container.RegisterAutoWired<EventRepository>().ReusedWithin(ReuseScope.Request);
+
             //Config examples
             //this.Plugins.Add(new PostmanFeature());
             //this.Plugins.Add(new CorsFeature());

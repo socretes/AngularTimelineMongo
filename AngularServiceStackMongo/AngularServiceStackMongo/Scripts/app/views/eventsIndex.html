@@ -1,0 +1,35 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h1>Events for {{timelineName}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" role="button" href="#/events/{{timelineId}}/new">Add an event</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Headline</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="event in events">
+                    <td>{{event.headline}}</td>
+                    <td>
+                        <a class="btn btn-default" role="button" href="#/events/{{timelineId}}/{{event.id}}/edit">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

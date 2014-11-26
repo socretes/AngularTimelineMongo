@@ -4,6 +4,13 @@ namespace AngularServiceStackMongo.ServiceModel
 {
     using System.Collections.Generic;
     using ServiceStack;
+    using AngularServiceStackMongo.Core;
+
+    [Route("/event", "GET")]
+    public class FindEvents : IReturn<List<Event>>
+    {
+        public string TimelineId { get; set; }
+    }
 
     [Route("/event/{Id}", "GET")]
     public class GetEvent : IReturn<Event>
@@ -12,7 +19,7 @@ namespace AngularServiceStackMongo.ServiceModel
     }
 
     [Route("/event", "POST")]
-    public class CreateEvent : IReturn<CreateEventResponse>
+    public class CreateEventRequest : IReturn<CreateEventResponse>, IEvent
     {
         public string Id { get; set; }
         public string UserName { get; set; }
@@ -29,7 +36,7 @@ namespace AngularServiceStackMongo.ServiceModel
         public string Tag { get; set; }
     }
 
-    public class CreateEventResponse
+    public class CreateEventResponse : IEvent
     {
         public string Id { get; set; }
         public string UserName { get; set; }
