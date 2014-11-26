@@ -7,16 +7,18 @@
         
         var timelineResource = $resource('api/timeline/:timelineId');
 
-        return {
+        return {    
             searchTimelines: function (name) {
                 return timelineResource.query({ name: name });
             },
             getTimeline: function (timelineId) {
                 return timelineResource.get({ timelineId: timelineId });
-            },
+            },  
             createTimeline: function () {
                 return new timelineResource({
-                    name: 'new timeline'
+                    name: 'new timeline',
+                    text: 'description',
+                    startDate: '2014,1,1',
                 });
             },
             updateTimeline: function (timeline) {

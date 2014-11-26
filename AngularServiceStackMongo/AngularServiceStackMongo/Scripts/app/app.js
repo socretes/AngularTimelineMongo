@@ -22,7 +22,12 @@
             $routeProvider.when('/timelines', { templateUrl: 'scripts/app/views/timelinesIndex.html', controller: 'TimelinesController' });
             $routeProvider.when('/timelines/new', { templateUrl: 'scripts/app/views/timelinesEditor.html', controller: 'TimelineController' });
             $routeProvider.when('/timelines/:timelineId/edit', { templateUrl: 'scripts/app/views/timelinesEditor.html', controller: 'TimelineController' });
+            $routeProvider.when('/timelines/:timelineId/viewer', { templateUrl: 'scripts/app/views/timelinesViewer.html', controller: 'TimelineViewerController' });
             $routeProvider.when('/:AuthStatus', { templateUrl: 'scripts/app/views/home.html' }); //// successful redirect from auth, s=1, f=AccessTokenFailed, f=RequestTokenFailed
+            $routeProvider.when('/events/:timelineId', { templateUrl: 'scripts/app/views/eventsIndex.html', controller: 'EventsController' });
+            $routeProvider.when('/events/:timelineId/new', { templateUrl: 'scripts/app/views/eventsEditor.html', controller: 'EventController' });
+            $routeProvider.when('/events/:timelineId/:eventId/edit', { templateUrl: 'scripts/app/views/eventsEditor.html', controller: 'EventController'});
+            
         }
     ]);
 

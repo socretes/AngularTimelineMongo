@@ -24,7 +24,7 @@ namespace AngularServiceStackMongo.Web
                         "~/scripts/toastr.js",
                         "~/scripts/app/app.js",
                 //"~/scripts/app/filters/*.js",
-                //"~/scripts/app/directives/*.js",
+                        "~/scripts/app/directives/*.js",
                         "~/scripts/app/services/*.js",
                         "~/scripts/app/controllers/*.js"));
 

@@ -19,15 +19,6 @@
                         <span data-ng-show="timelineForm.inputName.$error.required" class="help-block">Required</span>
                     </div>
                 </div>
-                <div class="form-group" data-ng-class="{'has-error': timelineForm.inputType.$invalid}">
-                    <label for="inputType" class="col-md-2 control-label">Type</label>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputType" placeholder="Enter timeline type here ..." required data-ng-model="timeline.type">
-                    </div>
-                    <div class="col-md-2">
-                        <span data-ng-show="timelineForm.inputType.$error.required" class="help-block">Required</span>
-                    </div>
-                </div>
                 <div class="form-group" data-ng-class="{'has-error': timelineForm.inputText.$invalid}">
                     <label for="inputText" class="col-md-2 control-label">Text</label>
                     <div class="col-md-4">
@@ -37,31 +28,13 @@
                         <span data-ng-show="timelineForm.inputText.$error.required" class="help-block">Required</span>
                     </div>
                 </div>
-                <div class="form-group" data-ng-class="{'has-error': timelineForm.inputMedia.$invalid}">
-                    <label for="inputMedia" class="col-md-2 control-label">Media</label>
+                <div class="form-group" data-ng-class="{'has-error': timelineForm.inputStartDate.$invalid}">
+                    <label for="inputStartDate" class="col-md-2 control-label">Start Date</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputMedia" placeholder="Enter timeline media here ..." required data-ng-model="timeline.media">
+                        <input type="text" class="form-control" name="inputStartDate" placeholder="Enter timeline start date here ..." required data-ng-model="timeline.startDate">
                     </div>
                     <div class="col-md-2">
-                        <span data-ng-show="timelineForm.inputMedia.$error.required" class="help-block">Required</span>
-                    </div>
-                </div>
-                <div class="form-group" data-ng-class="{'has-error': timelineForm.inputCredit.$invalid}">
-                    <label for="inputCredit" class="col-md-2 control-label">Credit</label>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputCredit" placeholder="Enter timeline credit here ..." required data-ng-model="timeline.credit">
-                    </div>
-                    <div class="col-md-2">
-                        <span data-ng-show="timelineForm.inputCredit.$error.required" class="help-block">Required</span>
-                    </div>
-                </div>
-                <div class="form-group" data-ng-class="{'has-error': timelineForm.inputCaption.$invalid}">
-                    <label for="inputCaption" class="col-md-2 control-label">Caption</label>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputCaption" placeholder="Enter timeline caption here ..." required data-ng-model="timeline.caption">
-                    </div>
-                    <div class="col-md-2">
-                        <span data-ng-show="timelineForm.inputCaption.$error.required" class="help-block">Required</span>
+                        <span data-ng-show="eventForm.inputStartDate.$error.required" class="help-block">Required</span>
                     </div>
                 </div>
                 <div class="form-group">

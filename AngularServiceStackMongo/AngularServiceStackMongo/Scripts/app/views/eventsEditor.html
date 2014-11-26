@@ -1,0 +1,73 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="eventForm" role="form" class="form-horizontal" novalidate data-ng-submit="submit()">
+            <fieldset>
+                <legend>{{formTitle}}</legend>
+                <div class="form-group" data-ng-show="false">
+                    <label for="inputId" class="col-md-2 control-label">Id</label>
+
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputId" value="{{event.id}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-show="false">
+                    <label for="inputTimelineId" class="col-md-2 control-label">TimelineId</label>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputTimelineId" value="{{event.timelineId}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': eventForm.inputHeadline.$invalid}">
+                    <label for="inputHeadline" class="col-md-2 control-label">Headline</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputHeadline" placeholder="Enter event headline here ..." required data-ng-model="event.headline">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="eventForm.inputHeadline.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': eventForm.inputText.$invalid}">
+                    <label for="inputText" class="col-md-2 control-label">Text</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputText" placeholder="Enter event text here ..." required data-ng-model="event.text">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="eventForm.inputText.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': eventForm.inputStartDate.$invalid}">
+                    <label for="inputStartDate" class="col-md-2 control-label">Start Date</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputStartDate" placeholder="Enter event start date here ..." required data-ng-model="event.startDate">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="eventForm.inputStartDate.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': eventForm.inputEndDate.$invalid}">
+                    <label for="inputEndDate" class="col-md-2 control-label">End Date</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputEndDate" placeholder="Enter event end date here ..." required data-ng-model="event.endDate">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="eventForm.inputEndDate.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': eventForm.inputMedia.$invalid}">
+                    <label for="inputMedia" class="col-md-2 control-label">Media</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputMedia" placeholder="Enter event media here ..." required data-ng-model="event.media">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="eventForm.inputMedia.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" data-ng-disabled="eventForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

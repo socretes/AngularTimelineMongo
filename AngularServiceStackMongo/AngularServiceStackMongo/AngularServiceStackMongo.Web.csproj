@@ -15,7 +15,7 @@
     <AssemblyName>AngularServiceStackMongo.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -218,14 +218,22 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\applicationController.js" />
+    <Content Include="Scripts\app\controllers\eventController.js" />
     <Content Include="Scripts\app\controllers\timelineController .js" />
+    <Content Include="Scripts\app\controllers\eventsController.js" />
     <Content Include="Scripts\app\controllers\timelinesController.js" />
+    <Content Include="Scripts\app\controllers\timelineViewerController.js" />
+    <Content Include="Scripts\app\directives\timelineJSDirective.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
+    <Content Include="Scripts\app\services\eventService.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
     <Content Include="Scripts\app\views\logon.html" />
+    <Content Include="Scripts\app\views\eventsEditor.html" />
     <Content Include="Scripts\app\views\timelinesEditor.html" />
+    <Content Include="Scripts\app\views\eventsIndex.html" />
     <Content Include="Scripts\app\views\timelinesIndex.html" />
     <Content Include="Scripts\app\views\home.html" />
+    <Content Include="Scripts\app\views\timelinesViewer.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -329,7 +337,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49581</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/AngularServiceStackMongo.Web</IISUrl>
+          <IISUrl>http://localhost:49581/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

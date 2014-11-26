@@ -13,7 +13,19 @@
             var entityQuery = Query<Event>.EQ(e => e.TimelineId, id);
 
             var result = this.MongoConnectionHandler.MongoCollection.Find(entityQuery)
-                        .SetSortOrder(SortBy<Event>.Ascending(p => p.Name))
+                        .SetSortOrder(SortBy<Event>.Ascending(p => p.StartDate))
+                        .SetLimit(limit)
+                        .SetSkip(skip);
+
+            return result;
+        }
+
+        public IEnumerable<Event> GetByHeadline(string headline, int limit, int skip)
+        {
+            var entityQuery = Query<Event>.EQ(e => e.Headline, headline);
+
+            var result = this.MongoConnectionHandler.MongoCollection.Find(entityQuery)
+                        .SetSortOrder(SortBy<Event>.Ascending(p => p.StartDate))
                         .SetLimit(limit)
                         .SetSkip(skip);
 
