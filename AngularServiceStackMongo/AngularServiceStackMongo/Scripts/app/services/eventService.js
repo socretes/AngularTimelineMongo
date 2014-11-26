@@ -19,8 +19,8 @@
                     timelineId: timelineId,
                     headline: 'new Event',
                     text: '<p>description</p>',
-                    startDate: '2014,1,1',
-                    endDate: '2014,1,30',
+                    startDate: moment().format("YYYY-MM-DD"),
+                    endDate: moment().format("YYYY-MM-DD"),
                     media: 'http://',
                 });
             },

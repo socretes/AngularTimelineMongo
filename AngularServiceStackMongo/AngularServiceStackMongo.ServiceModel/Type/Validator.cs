@@ -45,15 +45,6 @@
             {
                 Custom(b =>
                 {
-                    if (eventRepository.GetByHeadline(b.Headline, 1, 0).Any())
-                    {
-                        return new ValidationFailure("Headline", "An event with the same name already exists", "Duplicate", b.Headline);
-                    }
-                    return null;
-                });
-
-                Custom(b =>
-                {
                     if (timelineRepository.Get(b.TimelineId) == null)
                     {
                         return new ValidationFailure("TimelineId", "Timeline does not exist", "DoesNotExist", b.TimelineId);

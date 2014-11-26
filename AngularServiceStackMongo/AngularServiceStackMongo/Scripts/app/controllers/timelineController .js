@@ -16,6 +16,7 @@
                 $scope.formTitle = "Update timeline";
                 originalTimeline = timelineService.getTimeline($routeParams.timelineId);
                 originalTimeline.$promise.then(function () {
+                    originalTimeline.startDate = moment(originalTimeline.startDate).format("YYYY-MM-DD");
                     $scope.timeline = angular.copy(originalTimeline);
                 });
             }

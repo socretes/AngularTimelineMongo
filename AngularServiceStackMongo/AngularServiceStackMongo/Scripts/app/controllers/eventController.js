@@ -16,6 +16,8 @@
                 $scope.formTitle = "Update event";
                 originalEvent = eventService.getEvent($routeParams.eventId);
                 originalEvent.$promise.then(function () {
+                    originalEvent.startDate = moment(originalEvent.startDate).format("YYYY-MM-DD");
+                    originalEvent.endDate = moment(originalEvent.endDate).format("YYYY-MM-DD");
                     $scope.event = angular.copy(originalEvent);
                 });
             }

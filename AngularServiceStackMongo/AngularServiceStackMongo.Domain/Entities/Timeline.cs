@@ -25,6 +25,6 @@
 
         public string Caption { get; set; }
 
-        public string StartDate { get; set; }
+        public DateTime StartDate { get; set; }
     }
 }

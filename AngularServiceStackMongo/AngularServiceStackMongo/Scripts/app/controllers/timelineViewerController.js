@@ -3,43 +3,59 @@
 
     var myAppModule = angular.module('myApp');
 
-    myAppModule.controller('TimelineViewerController', ['$scope', '$location', '$routeParams', 'timelineService',
-        function ($scope, $location, $routeParams, timelineService) {
+    myAppModule.controller('TimelineViewerController', ['$scope', '$location', '$routeParams', 'timelineService', 'eventService',
+        function ($scope, $location, $routeParams, timelineService, eventService) {
+            var timelinePromise = timelineService.getTimeline($routeParams.timelineId);
 
-            $scope.timeline = {
-                "timeline":
-                {
-                    "headline": "DC Growth",
-                    "type": "default",
-                    "text": "2014 Goals",
-                    "startDate": "2014,1,1",
-                    "date": [
+            timelinePromise.$promise.then(function () {
+                var timeline = angular.copy(timelinePromise);
+                var eventsPromise = eventService.searchEvents($routeParams.timelineId);
+
+                eventsPromise.$promise.then(function () {
+
+                    var events = angular.copy(eventsPromise);
+
+                    var controlEvents = new Array();
+                    
+                    for (var i = 0; i < events.length; i++)
                     {
-                        "startDate": "2014,1,2",
-                        "endDate": "2012,1,27",
-                        "headline": "January Release",
-                        "text": "<p>Brand and Payroll updates</p>",
-                        "asset":
+                        var item = {
+                            "startDate": moment(events[i].startDate).format("YYYY,MM,DD"),
+                            "endDate": moment(events[i].endDate).format("YYYY,MM,DD"),
+                            "headline": events[i].headline,
+                            "text": events[i].text,
+                            "asset":
+                            {
+                                "media": events[i].media,
+                                "credit": "",
+                                "caption": ""
+                            }
+                        };
+
+                        controlEvents.push(item);
+                    }
+
+                    var controlTimeline = {
+                        "timeline":
                         {
-                            "media": "",
-                            "credit": "",
-                            "caption": ""
+                            "headline": timeline.name,
+                            "type": "default",
+                            "text": timeline.text,
+                            "startDate": moment(timeline.startDate).format("YYYY,MM,DD"),
+                            "date": controlEvents
                         }
-                    },
-                    {
-                        "startDate": "2014,2,1",
-                        "endDate": "2012,2,27",
-                        "headline": "Februray Release",
-                        "text": "<p>Bulk UPdates</p>",
-                        "asset":
-                        {
-                            "media": "",
-                            "credit": "",
-                            "caption": ""
-                        }
-                    }]
-                }
-            };
+                    };
+
+                    createStoryJS({
+                        type: 'timeline',
+                        width: '100%',
+                        height: '600',
+                        source: controlTimeline,
+                        embed_id: 'jsTimeline'
+                    });
+
+                });
+            });
         }
     ]);
 })();

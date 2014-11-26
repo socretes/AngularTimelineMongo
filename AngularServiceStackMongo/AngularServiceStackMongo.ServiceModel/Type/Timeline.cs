@@ -1,5 +1,6 @@
 ﻿namespace AngularServiceStackMongo.ServiceModel
 {
+    using System;
     using AngularServiceStackMongo.Core;
 
     public class Timeline : ITimeline, IIdentifiable<string>, IUser
@@ -20,6 +21,6 @@
 
         public string Caption { get; set; }
 
-        public string StartDate { get; set; }
+        public DateTime StartDate { get; set; }
     }
 }

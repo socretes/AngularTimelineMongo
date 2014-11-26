@@ -1,5 +1,6 @@
 ﻿namespace AngularServiceStackMongo.ServiceModel
 {
+    using System;
     using System.Collections.Generic;
     using ServiceStack;
     using AngularServiceStackMongo.Core;
@@ -26,7 +27,7 @@
         public string Media { get; set; }
         public string Credit { get; set; }
         public string Caption { get; set; }
-        public string StartDate { get; set; }
+        public DateTime StartDate { get; set; }
     }
 
     public class CreateTimelineResponse : ITimeline
@@ -38,7 +39,7 @@
         public string Media { get; set; }
         public string Credit { get; set; }
         public string Caption { get; set; }
-        public string StartDate { get; set; }
+        public DateTime StartDate { get; set; }
         public ResponseStatus ResponseStatus { get; set; } //TODO: Determine if this is giving me anything!
     }
 
