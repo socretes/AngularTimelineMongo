@@ -27,6 +27,7 @@
                     <td>{{event.headline}}</td>
                     <td>
                         <a class="btn btn-default" role="button" href="#/events/{{timelineId}}/{{event.id}}/edit">Edit</a>
+                        <button type="button" class="btn btn-default" data-ng-click="delete(event.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>

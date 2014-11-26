@@ -26,6 +26,10 @@
             },
             updateEvent: function (event) {
                 return event.$save();
+            },
+            deleteEvent: function (id) {
+                var resourceInstance = new eventResource();
+                return resourceInstance.$delete({ eventId: id });
             }
         };
     }]);
