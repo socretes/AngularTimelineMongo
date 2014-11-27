@@ -28,6 +28,7 @@
                                                     toastr.success('Time line Updated');
                                                     $location.path('/timelines');
                                                 });
+
             };
 
             $scope.cancel = function () {

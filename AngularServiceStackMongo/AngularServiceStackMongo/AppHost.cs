@@ -11,6 +11,7 @@
     using ServiceStack.Mvc;
     using ServiceStack.Validation;
     using System.Web.Mvc;
+    using TweetSharp;
 
     public class AppHost : AppHostBase
     {
@@ -36,22 +37,32 @@
                 HandlerFactoryPath = "api",
             });
 
+            var appSettings = new AppSettings();
+
             ApplyDebugConfig();
 
             EnableValidation(container);
 
             ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
 
+            RegisterRepositories(container);
+
+            RegisterAuth(container, appSettings);
+            
+            RegisterTweetService(container, appSettings);
+
+            RegisterControllerFactory(container);
+        }
+
+        private static void RegisterRepositories(Container container)
+        {
             container.RegisterAutoWired<TimelineRepository>().ReusedWithin(ReuseScope.Request);
 
             container.RegisterAutoWired<EventRepository>().ReusedWithin(ReuseScope.Request);
+        }
 
-            //Config examples
-            //this.Plugins.Add(new PostmanFeature());
-            //this.Plugins.Add(new CorsFeature());
-            ConfigureAuth(container);
-
-            //Set MVC to use the same Funq IOC as ServiceStack
+        private static void RegisterControllerFactory(Container container)
+        {
             ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
         }
 
@@ -70,12 +81,8 @@
         }
 
 
-        private void ConfigureAuth(Container container)
+        private void RegisterAuth(Container container, AppSettings appSettings)
         {
-            //Enable and register existing services you want this host to make use of.
-            //Look in Web.config for examples on how to configure your oauth providers, e.g. oauth.facebook.AppId, etc.
-            var appSettings = new AppSettings();
-
             Plugins.Add(new AuthFeature(() => new AuthUserSession(),
                     new IAuthProvider[] {
                         new TwitterAuthProvider(appSettings), //HTML Form post of User/Pass
@@ -85,23 +92,30 @@
             //Provide service for new users to register so they can login with supplied credentials.
             Plugins.Add(new RegistrationFeature());
 
-            var authRepo = CreatAuthRepo(container, appSettings);
+            CreatAuthRepo(container, appSettings);
  
             Plugins.Add(new RequestLogsFeature());
         }
 
-        private IUserAuthRepository CreatAuthRepo(Container container, AppSettings appSettings)
+        private void CreatAuthRepo(Container container, AppSettings appSettings)
         {
-            var mongoClient = new MongoClient("mongodb://jonathan_dudgeon:jonathan_dudgeon@ds053080.mongolab.com:53080/jonsmongodb");
+            var connectionString = appSettings.Get("MongoDBConnection");
+            var mongoApp = appSettings.Get("MongoApp");
+            var mongoClient = new MongoClient(connectionString);
             var server = mongoClient.GetServer();
-            var db = server.GetDatabase("jonsmongodb");
+            var db = server.GetDatabase(mongoApp);
 
             container.Register<IAuthRepository>(c =>
                 new MongoDbAuthRepository(db, true));
+        }
 
-            var authRepo = (MongoDbAuthRepository)container.Resolve<IAuthRepository>();
-      
-            return authRepo;
+        private void RegisterTweetService(Container container, AppSettings appSettings)
+        {
+            var consumerAppKey = appSettings.Get("oauth.twitter.ConsumerKey");
+            var consumerAppSecret = appSettings.Get("oauth.twitter.ConsumerSecret");
+            var twitterApp = new TwitterService(consumerAppKey, consumerAppSecret);
+
+            container.Register<ITwitterService>(c => twitterApp);
         }
     }
 }
