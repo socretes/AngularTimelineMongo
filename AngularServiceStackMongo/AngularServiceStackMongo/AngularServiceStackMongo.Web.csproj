@@ -243,6 +243,8 @@
     <Content Include="Scripts\app\services\httpInterceptor.js" />
     <Content Include="Scripts\app\services\eventService.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
+    <Content Include="Scripts\app\views\about.html" />
+    <Content Include="Scripts\app\views\contact.html" />
     <Content Include="Scripts\app\views\logon.html" />
     <Content Include="Scripts\app\views\eventsEditor.html" />
     <Content Include="Scripts\app\views\timelinesEditor.html" />

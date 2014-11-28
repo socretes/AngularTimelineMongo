@@ -26,8 +26,9 @@
             $routeProvider.when('/:AuthStatus', { templateUrl: 'scripts/app/views/home.html' }); //// successful redirect from auth, s=1, f=AccessTokenFailed, f=RequestTokenFailed
             $routeProvider.when('/events/:timelineId', { templateUrl: 'scripts/app/views/eventsIndex.html', controller: 'EventsController' });
             $routeProvider.when('/events/:timelineId/new', { templateUrl: 'scripts/app/views/eventsEditor.html', controller: 'EventController' });
-            $routeProvider.when('/events/:timelineId/:eventId/edit', { templateUrl: 'scripts/app/views/eventsEditor.html', controller: 'EventController'});
-            
+            $routeProvider.when('/events/:timelineId/:eventId/edit', { templateUrl: 'scripts/app/views/eventsEditor.html', controller: 'EventController' });
+            $routeProvider.when('/about', { templateUrl: 'scripts/app/views/about.html' });
+            $routeProvider.when('/contact', { templateUrl: 'scripts/app/views/contact.html' });
         }
     ]);
 
