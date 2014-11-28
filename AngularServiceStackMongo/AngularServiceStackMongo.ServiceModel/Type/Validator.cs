@@ -16,6 +16,11 @@
         {
             RuleFor(b => b.Name).NotEmpty();
             RuleFor(b => b.Name).NotNull();
+            RuleFor(x => x.Name.Length).LessThan(50);
+
+            RuleFor(b => b.Text).NotEmpty();
+            RuleFor(b => b.Text).NotNull();
+            RuleFor(x => x.Text.Length).LessThan(50);
 
             RuleSet(ApplyTo.Post, () =>
             {
@@ -40,9 +45,23 @@
 
             RuleFor(b => b.Headline).NotEmpty();
             RuleFor(b => b.Headline).NotNull();
+            RuleFor(x => x.Headline.Length).LessThan(50);
+
+            RuleFor(b => b.Text).NotEmpty();
+            RuleFor(b => b.Text).NotNull();
+            RuleFor(x => x.Text.Length).LessThan(50);
 
             RuleSet(ApplyTo.Post, () =>
             {
+                Custom(b =>
+                {
+                    if (b.StartDate > b.EndDate)
+                    {
+                        return new ValidationFailure("Dates", "Timeline start date after end date", "Dates", b.StartDate);
+                    }
+                    return null;
+                });
+
                 Custom(b =>
                 {
                     if (timelineRepository.Get(b.TimelineId) == null)

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IIdentifiable.cs" />
+    <Compile Include="ITweet.cs" />
     <Compile Include="IUser.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="ITimeline.cs" />

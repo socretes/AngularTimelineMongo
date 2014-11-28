@@ -239,6 +239,7 @@
     <Content Include="Scripts\app\controllers\timelineViewerController.js" />
     <Content Include="Scripts\app\directives\timelineJSDirective.js" />
     <Content Include="Scripts\app\responsivemobilemenu\responsivemobilemenu.js" />
+    <Content Include="Scripts\app\services\tweetService.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
     <Content Include="Scripts\app\services\eventService.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
