@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventService.cs" />
+    <Compile Include="TweetService.cs" />
     <Compile Include="TimelineService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
