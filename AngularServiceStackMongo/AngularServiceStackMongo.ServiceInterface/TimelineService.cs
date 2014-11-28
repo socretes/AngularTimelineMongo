@@ -41,7 +41,7 @@
 
             repository.SaveUpdate(entity);
 
-            SendTweet(request);
+            SendTweet(request, entity.Id);
    
             return entity.ConvertTo<CreateTimelineResponse>();
         }
@@ -54,14 +54,15 @@
             return new DeleteTimelineResponse() { Id = request.Id };
         }
 
-        private void SendTweet(ITimeline request)
+        private void SendTweet(ITimeline request, MongoDB.Bson.ObjectId id)
         {
             var authToken = this.SessionAs<AuthUserSession>();
 
             this.twitterService.AuthenticateWith(authToken.GetOAuthTokens("twitter").AccessToken,
                                                  authToken.GetOAuthTokens("twitter").AccessTokenSecret);
-
-            string text = DateTime.Now + request.Name + " updated by " + authToken.TwitterScreenName + " using #Khronos. see " + authToken.ReferrerUrl;
+            ////http://jonhackathon.azurewebsites.net/#/timelines/5478913f91de920e1c4a78b1/viewer
+            string text = DateTime.Now + request.Name + " updated by " + authToken.TwitterScreenName + " using #Khronos. see "
+                + "http://jonhackathon.azurewebsites.net/#/timelines/" + id;
 
             var status = twitterService.SendTweet(new SendTweetOptions { Status = text });
         }
