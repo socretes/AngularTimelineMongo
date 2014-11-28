@@ -30,6 +30,7 @@
             return dto;
         }
 
+        [Authenticate]
         public CreateEventResponse Post(CreateEventRequest request)
         {
             var entity = request.ConvertTo<Domain.Event>();
@@ -38,6 +39,7 @@
             return entity.ConvertTo<CreateEventResponse>();
         }
 
+         [Authenticate]
         public DeleteEventResponse Delete(DeleteEvent request)
         {
             repository.Delete(request.Id);

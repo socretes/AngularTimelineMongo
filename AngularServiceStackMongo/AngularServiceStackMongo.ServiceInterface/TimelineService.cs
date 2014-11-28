@@ -46,6 +46,7 @@
             return entity.ConvertTo<CreateTimelineResponse>();
         }
 
+         [Authenticate]
         public DeleteTimelineResponse Delete(DeleteTimeline request)
         {
             repository.Delete(request.Id);
@@ -60,7 +61,7 @@
             this.twitterService.AuthenticateWith(authToken.GetOAuthTokens("twitter").AccessToken,
                                                  authToken.GetOAuthTokens("twitter").AccessTokenSecret);
 
-            string text = "Timeline : " + request.Name + " updated by " + authToken.TwitterScreenName + " using #Khronos";
+            string text = DateTime.Now + request.Name + " updated by " + authToken.TwitterScreenName + " using #Khronos. see " + authToken.ReferrerUrl;
 
             var status = twitterService.SendTweet(new SendTweetOptions { Status = text });
         }
