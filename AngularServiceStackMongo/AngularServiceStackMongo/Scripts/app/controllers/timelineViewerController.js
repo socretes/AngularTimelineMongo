@@ -41,7 +41,6 @@
                             "headline": timeline.name,
                             "type": "default",
                             "text": timeline.text,
-                            "startDate": moment(timeline.startDate).format("YYYY,MM,DD"),
                             "date": controlEvents
                         }
                     };

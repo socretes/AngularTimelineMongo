@@ -18,7 +18,6 @@
                 return new timelineResource({
                     name: 'new timeline',
                     text: 'description',
-                    startDate: moment().format("YYYY-MM-DD"),
                 });
             },
             updateTimeline: function (timeline) {
