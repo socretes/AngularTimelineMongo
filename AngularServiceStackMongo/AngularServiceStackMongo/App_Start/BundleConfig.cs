@@ -26,12 +26,18 @@ namespace AngularServiceStackMongo.Web
                 //"~/scripts/app/filters/*.js",
                         "~/scripts/app/directives/*.js",
                         "~/scripts/app/services/*.js",
-                        "~/scripts/app/controllers/*.js"));
+                        "~/scripts/app/controllers/*.js"
+                        //"~/scripts/pickadate/*.js"
+                        ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/content/bootstrap.css",
                       "~/content/toastr.css",
-                      "~/content/app/app.css"));
+                      "~/content/styles.css",
+                      "~/content/responsivemobilemenu.css",
+                      "~/content/bootstrap-switch.css"
+                      //"~/content/app/app.css"
+                      ));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
