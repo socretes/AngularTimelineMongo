@@ -200,15 +200,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\img\favicon.ico" />
-    <Content Include="Content\img\graphite-menu-bg-hover.png" />
-    <Content Include="Content\img\graphite-menu-bg.png" />
-    <Content Include="Content\img\KhronosLogo1.png" />
-    <Content Include="Content\img\sapphire-menu-bg.png" />
     <Content Include="Content\img\sign-in-with-twitter-l.png" />
-    <Content Include="Content\img\touch-icon-114x114.png" />
-    <Content Include="Content\img\touch-icon-57x57.png" />
-    <Content Include="Content\img\touch-icon-72x72.png" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
