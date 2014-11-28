@@ -26,7 +26,8 @@ namespace AngularServiceStackMongo.Web
                 //"~/scripts/app/filters/*.js",
                         "~/scripts/app/directives/*.js",
                         "~/scripts/app/services/*.js",
-                        "~/scripts/app/controllers/*.js"
+                        "~/scripts/app/controllers/*.js",
+                        "~/scripts/app/bootstrap-switch.js"
                         //"~/scripts/pickadate/*.js"
                         ));
 
@@ -34,10 +35,17 @@ namespace AngularServiceStackMongo.Web
                       "~/content/bootstrap.css",
                       "~/content/toastr.css",
                       "~/content/styles.css",
-                      "~/content/responsivemobilemenu.css",
                       "~/content/bootstrap-switch.css"
                       //"~/content/app/app.css"
                       ));
+
+            bundles.Add(new ScriptBundle("~/bundles/responsive-scripts").Include(
+                    "~/scripts/app/responsivemobilemenu/responsivemobilemenu.js"
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/responsive-styles").Include(
+                     "~/content/responsivemobilemenu/responsivemobilemenu.css"
+                ));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

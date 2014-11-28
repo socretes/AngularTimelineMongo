@@ -206,7 +206,7 @@
     <Content Include="Content\img\KhronosLogo1.png" />
     <Content Include="Content\img\sapphire-menu-bg.png" />
     <Content Include="Content\img\sign-in-with-twitter-l.png" />
-    <Content Include="Content\responsivemobilemenu.css" />
+    <Content Include="Content\responsivemobilemenu\responsivemobilemenu.css" />
     <Content Include="Content\styles.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
@@ -230,6 +230,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\bootstrap-switch.js" />
     <Content Include="Scripts\app\controllers\applicationController.js" />
     <Content Include="Scripts\app\controllers\eventController.js" />
     <Content Include="Scripts\app\controllers\timelineController .js" />
@@ -237,6 +238,7 @@
     <Content Include="Scripts\app\controllers\timelinesController.js" />
     <Content Include="Scripts\app\controllers\timelineViewerController.js" />
     <Content Include="Scripts\app\directives\timelineJSDirective.js" />
+    <Content Include="Scripts\app\responsivemobilemenu\responsivemobilemenu.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
     <Content Include="Scripts\app\services\eventService.js" />
     <Content Include="Scripts\app\services\timelineService.js" />
