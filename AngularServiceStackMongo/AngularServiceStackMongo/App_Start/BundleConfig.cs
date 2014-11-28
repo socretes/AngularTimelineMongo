@@ -13,7 +13,7 @@ namespace AngularServiceStackMongo.Web
                         "~/scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/common-scripts").Include(
-                        "~/scripts/jquery-{version}.js",
+                        //"~/scripts/jquery-{version}.js",
                         "~/scripts/moment.js",
                         "~/scripts/angular.js",
                         "~/scripts/angular-route.js",
