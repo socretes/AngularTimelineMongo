@@ -41,7 +41,7 @@
                 <div class="form-group" data-ng-class="{'has-error': eventForm.inputStartDate.$invalid}">
                     <label for="inputStartDate" class="col-md-2 control-label">Start Date</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputStartDate" placeholder="Enter event start date here ..." required data-ng-model="event.startDate">
+                        <input type="date" class="form-control" name="inputStartDate" placeholder="Enter event start date here ..." required data-ng-model="event.startDate">
                     </div>
                     <div class="col-md-2">
                         <span data-ng-show="eventForm.inputStartDate.$error.required" class="help-block">Required</span>
@@ -50,7 +50,7 @@
                 <div class="form-group" data-ng-class="{'has-error': eventForm.inputEndDate.$invalid}">
                     <label for="inputEndDate" class="col-md-2 control-label">End Date</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputEndDate" placeholder="Enter event end date here ..." required data-ng-model="event.endDate">
+                        <input type="date" class="form-control" name="inputEndDate" placeholder="Enter event end date here ..." required data-ng-model="event.endDate">
                     </div>
                     <div class="col-md-2">
                         <span data-ng-show="eventForm.inputEndDate.$error.required" class="help-block">Required</span>
