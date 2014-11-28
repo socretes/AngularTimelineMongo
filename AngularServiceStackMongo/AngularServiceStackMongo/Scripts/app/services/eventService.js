@@ -21,7 +21,7 @@
                     text: '<p>description</p>',
                     startDate: moment().format("YYYY-MM-DD"),
                     endDate: moment().format("YYYY-MM-DD"),
-                    media: 'http://',
+                    media: 'http://www',
                 });
             },
             updateEvent: function (event) {
