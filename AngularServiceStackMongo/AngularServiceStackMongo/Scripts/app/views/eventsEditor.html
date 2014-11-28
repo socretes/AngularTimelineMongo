@@ -19,19 +19,23 @@
                 <div class="form-group" data-ng-class="{'has-error': eventForm.inputHeadline.$invalid}">
                     <label for="inputHeadline" class="col-md-2 control-label">Headline</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputHeadline" placeholder="Enter event headline here ..." required data-ng-model="event.headline">
+                        <input type="text" class="form-control" name="inputHeadline" placeholder="Enter event headline here ..." required ng-minlength="0" ng-maxlength="50" data-ng-model="event.headline">
                     </div>
                     <div class="col-md-2">
                         <span data-ng-show="eventForm.inputHeadline.$error.required" class="help-block">Required</span>
+                        <span data-ng-show="eventForm.inputHeadline.$error.minlength" class="help-block">Too few characters</span>
+                        <span data-ng-show="eventForm.inputHeadline.$error.maxlength" class="help-block">Too many characters</span>
                     </div>
                 </div>
                 <div class="form-group" data-ng-class="{'has-error': eventForm.inputText.$invalid}">
                     <label for="inputText" class="col-md-2 control-label">Text</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputText" placeholder="Enter event text here ..." required data-ng-model="event.text">
+                        <input type="text" class="form-control" name="inputText" placeholder="Enter event text here ..." required ng-minlength="0" ng-maxlength="50" data-ng-model="event.text">
                     </div>
                     <div class="col-md-2">
                         <span data-ng-show="eventForm.inputText.$error.required" class="help-block">Required</span>
+                        <span data-ng-show="eventForm.inputText.$error.minlength" class="help-block">Too few characters</span>
+                        <span data-ng-show="eventForm.inputText.$error.maxlength" class="help-block">Too many characters</span>
                     </div>
                 </div>
                 <div class="form-group" data-ng-class="{'has-error': eventForm.inputStartDate.$invalid}">
