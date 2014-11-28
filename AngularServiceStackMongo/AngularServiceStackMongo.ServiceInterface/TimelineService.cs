@@ -60,7 +60,7 @@
 
             this.twitterService.AuthenticateWith(authToken.GetOAuthTokens("twitter").AccessToken,
                                                  authToken.GetOAuthTokens("twitter").AccessTokenSecret);
-            string text = "TimeLine updated by " + authToken.TwitterScreenName + " using #Khronos. "
+            string text = DateTime.Now + " TimeLine updated by " + authToken.TwitterScreenName + " using #Khronos. "
                 + "http://jonhackathon.azurewebsites.net/#/timelines/" + id + "/viewer";
 
             var status = twitterService.SendTweet(new SendTweetOptions { Status = text });
