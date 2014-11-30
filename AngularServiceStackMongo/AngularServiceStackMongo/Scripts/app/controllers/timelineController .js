@@ -5,6 +5,8 @@
 
     myAppModule.controller('TimelineController', ['$scope', '$location', '$routeParams', 'timelineService',
         function ($scope, $location, $routeParams, timelineService) {
+
+            //// set the timeline object based on current ulr/page, we will call save on this later on submit
             $scope.isNew = !$routeParams.timelineId;
 
             var originalTimeline = null;
@@ -20,8 +22,9 @@
                 });
             }
 
+            ////use action set above
             $scope.submit = function () {
-                
+                ////updatetimeline invokes $save on the defined timeline action
                 timelineService.updateTimeline($scope.timeline)
                                                 .then(function () {
                                                     toastr.success('Time line Updated');

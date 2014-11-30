@@ -3,8 +3,8 @@
 
     var myAppModule = angular.module('myApp');
 
-    myAppModule.controller('TimelinesController', ['$scope', 'timelineService',
-            function ($scope, timelineService) {
+    myAppModule.controller('TimelinesController', ['$scope', 'timelineService','tweetService',
+            function ($scope, timelineService, tweetService) {
 
                 $scope.timelines = timelineService.searchTimelines();
 
@@ -13,6 +13,14 @@
                                                     .then(function () {
                                                         $scope.timelines = timelineService.searchTimelines();
                                                         toastr.success('Time line Deleted');
+                                                    });
+                };
+
+
+                $scope.tweet = function (timeLineId) {
+                    tweetService.createTweet(timeLineId)
+                                                    .then(function () {
+                                                        toastr.success('Tweet!');
                                                     });
                 };
             }
