@@ -17,10 +17,6 @@ namespace AngularServiceStackMongo.Web
             new AppHost().Init();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-#if DEBUG
-            BundleTable.EnableOptimizations = false;
-#endif
         }
     }
 }
